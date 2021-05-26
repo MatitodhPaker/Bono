@@ -194,7 +194,7 @@ function calcular(cursos, sueldo, edad, sexo, nacionalidad, anos) {
                       console.log(horas_curso+'dentro del for');
                     }
                     if (cursos[index]=='BD') {
-                      horas_curso=horas_curso+40;
+                      horas_curso=horas_curso+15;
                       console.log(horas_curso+'dentro del for');
                     }
                   }
@@ -233,7 +233,7 @@ function calcular(cursos, sueldo, edad, sexo, nacionalidad, anos) {
                       console.log(horas_curso+'dentro del for');
                     }
                     if (cursos[index]=='BD') {
-                      horas_curso=horas_curso+40;
+                      horas_curso=horas_curso+15;
                       console.log(horas_curso+'dentro del for');
                     }
                   }
@@ -272,7 +272,7 @@ function calcular(cursos, sueldo, edad, sexo, nacionalidad, anos) {
                       console.log(horas_curso+'dentro del for');
                     }
                     if (cursos[index]=='BD') {
-                      horas_curso=horas_curso+40;
+                      horas_curso=horas_curso+15;
                       console.log(horas_curso+'dentro del for');
                     }
                   }
