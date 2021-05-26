@@ -17,7 +17,7 @@
           <h1>Calculo de bono</h1>
           <div class="row mt-2">
             <div class="col">
-              <form method="post" onsubmit="return obtener_datos()" id="frmbono">
+              <form method="post" onsubmit="return bono_final()" id="frmbono">
                 <div class="form-group">
                   <h4>Datos del empleado</h4>
                   <div class="row">
@@ -131,7 +131,6 @@
                       <label>Tu bono es de:</label>
                       <div class="row">
                         <div class="col-sm-8"><input type="number" id="total" class="form-control" disabled></div>
-                        <div class="col" id="cmoneda"></div>
                       </div>
                     </div>
                   </div>
