@@ -1,151 +1,158 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <title>Examen</title>
-    <!-- Required meta tags -->
+<html lang="es">
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Examen</title>
+</head>
+<body style="height: 100vh;" class="bg-dark bg-gradient w-100">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-      <div class="container-fluid">
-        <div class="row mt-3">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-6">
-          <h1>Calculo de bono</h1>
-          <div class="row mt-2">
-            <div class="col">
-              <form method="post" onsubmit="return bono_final()" id="frmbono">
-                <div class="form-group">
-                  <h4>Datos del empleado</h4>
-                  <div class="row">
-                    <div class="col">
-                      <div class="row">
-                        <label for="sueldo">Sueldo: </label>
-                        <input type="number" name="sueldo" id="sueldo" required placeholder="600" min="600" max="10000" class="form-control">
-                      </div>
-                      <div class="row">
-                        <label for="sexo">Sexo:</label>
-                        <select name="sexo" id="sexo" class="form-control">
-                          <option value="seleccion" selected disabled class="form-control">seleciona</option>
-                          <option value="femenino">Femenino</option>
-                          <option value="masculino">Masculino</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-sm-1"></div>
-                    <div class="col">
-                      <div class="row">
-                        <label for="edad">Edad: </label>
-                        <input type="number" id="edad" class="form-control" placeholder="22" required  min="22" max="60">
-                      </div>
-                      <div class="row">
-                        <label for="nacionalidad">Nacionalidad:</label>
-                        <select name="nacionalidad" id="nacionalidad" class="form-control">
-                          <option value="nacional" selected>Nacional</option>
-                          <option value="extranjero">Extranjero</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col">
-                      <h4>Cursos</h4>
-                      <div class="row">
-                        <div class="col">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="curso1" id="php" value="php">
-                              PHP
-                            </label>
-                            <br>
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="curso2" id="ASP .Net" value="ASP">
-                              ASP .Net
-                            </label>
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="curso3" id="VB .NET" value="VB">
-                              VB .NET
-                            </label>
-                          </div>
+    <div class="container pt-5">
+        <div class="rowbg-secondary bg-gradient pb-5 text-light rounded shadow-lg">
+            <div class="col-8 offset-2">
+
+                <form method="post" class="needs-validation" onsubmit="return bono_final()" id="frmbono" novalidate>
+                    <div class="container">
+                        <p class="display-5 pt-5">Calculo de Bono</p>
+
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label for="sueldo" class="form-label">Sueldo:</label>
+                                    <input type="number" class="form-control" id="sueldo" aria-describedby="sueldoHelp" required>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label for="edad" class="form-label">Edad</label>
+                                    <input type="number" class="form-control" id="edad" aria-describedby="edadHelp" required>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <label for="sexo" class="form-label">Selecciona tu genero</label>
+                                <select id="sexo" class="form-select" aria-label="Selecciona tu genero" required>
+                                    <option selected disabled value="">Selecciona tu genero</option>
+                                    <option value="femenino">Femenino</option>
+                                    <option value="masculino">Masculino</option>
+                                </select>
+                            </div>
+
+                            <div class="col-6">
+                                <label for="nacionalidad" class="form-label">Selecciona tu procedencia</label>
+                                <select id="nacionalidad" class="form-select" aria-label="Selecciona tu procedencia" required>
+                                    <option selected disabled value="">Selecciona tu procedencia</option>
+                                    <option value="nacional">Nacional</option>
+                                    <option value="extranjero">Extranjero</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="col"></div>
-                        <div class="col">
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="curso4" id="java" value="java">
-                              JAVA
-                            </label>
-                            <br>
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="curso5" id="oracle" value="oracle">
-                              Oracle
-                            </label>
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" name="curso6" id="Introduccion_a_BD" value="BD">
-                              Introduccion a BD
-                            </label>
-                          </div>
+
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                <p class="display-6">Cursos</p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="form-check form-switch">
+                                                <input name="curso1" class="form-check-input" type="checkbox" id="php" value="php">
+                                                <label class="form-check-label" for="php">PHP</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input name="curso2" class="form-check-input" type="checkbox" id="ASP .net" value="ASP">
+                                                <label class="form-check-label" for="ASP .net">ASP .net</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input name="curso3" class="form-check-input" type="checkbox" id="VB .NET" value="VB">
+                                                <label class="form-check-label" for="VB .NET">VB .NET</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <div class="form-check form-switch">
+                                                <input name="curso4" class="form-check-input" type="checkbox" id="java" value="java">
+                                                <label class="form-check-label" for="java">Java</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input name="curso5" class="form-check-input" type="checkbox" id="oracle" value="oracle">
+                                                <label class="form-check-label" for="oracle">Oracle</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input name="curso6" class="form-check-input" type="checkbox" id="Introduccion a BD" value="BD">
+                                                <label class="form-check-label" for="Introduccion_a_BD">Intro a BD</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <p class="display-6">Antiguedad</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="antiguedad" id="1a5" value="1a5" required>
+                                    <label class="form-check-label" for="1a5">
+                                        1 a 5 años
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="antiguedad" id="6a10" value="6a10" required>
+                                    <label class="form-check-label" for="6a10">
+                                        6 a 10 años
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="antiguedad" id="mas10" value="mas10" required>
+                                    <label class="form-check-label" for="mas10">
+                                        Mas de 10 años
+                                    </label>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="col-sm-1"></div>
-                    <div class="col">
-                      <h4>Antiguedad</h4>
-                      <div class="row">
-                        <div class="form-check form-check">
-                          <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="antiguedad" id="1a5" value="1a5"> 
-                            1 a 5 años
-                          </label>
-                          <br>
-                          <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="antiguedad" id="6a10" value="6a10"> 
-                            6 a 10 años
-                          </label>
-                          <br>
-                          <label class="form-check-label">
-                            <input class="form-check-input" type="radio" name="antiguedad" id="mas10" value="mas10"> 
-                            Mas de 10 años
-                          </label>
+
+                        <div class="row mt-4">
+                            <div class="col-6 d-grid">
+                                <button id="calcular" class="btn btn-info">Calcular</button>
+                            </div>
+
+                            <div class="col-6 d-grid">
+                                <span class="btn btn-danger" onclick="limpiar()">Nuevo calculo</span>
+                            </div>
                         </div>
-                      </div>
+
+                        <div class="row mt-3">
+                            <div class="col">
+                                <p class="display-6">Tu bono es de:</p>    
+                                <input type="text" id="total" class="form-control" disabled>
+                            </div>
+                        </div>
+                        
                     </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="row">
-                    <div class="col">
-                    <button class="btn btn-info btn-block">Calcular</button>
-                    </div>
-                    <div class="col">
-                      <span class="btn btn-danger btn-block" onclick="limpiar()">Nuevo calculo</span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <label>Tu bono es de:</label>
-                      <div class="row">
-                        <div class="col-sm-8"><input type="number" id="total" class="form-control" disabled></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
+                </form>
+                
             </div>
-          </div>
         </div>
-        </div>
-      </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
-  </body>
+    <script>
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
 </html>
